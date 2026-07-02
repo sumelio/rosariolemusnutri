@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosario Lemus Barrera — Nutritionist | Nutricionista</title>
+  <meta name="description" content="Rosario Lemus Barrera — Holistic Nutritionist, MSc in Food and Nutritional Security, Specialist in Pediatric Clinical Nutrition." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <img class="brand-logo" src="assets/logo.png" alt="Rosario Lemus Nutrición Holística logo" />
+        <span class="brand-name">Rosario Lemus</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about" data-i18n="nav.about"></a>
+        <a href="#experience" data-i18n="nav.experience"></a>
+        <a href="#education" data-i18n="nav.education"></a>
+        <a href="#skills" data-i18n="nav.skills"></a>
+        <a href="#contact" data-i18n="nav.contact"></a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+          <button id="btn-es" class="lang-btn" onclick="setLang('es')">ES</button>
+        </div>
+        <button class="menu-toggle" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="top">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow" data-i18n="hero.eyebrow"></p>
+        <h1>Rosario Lemus Barrera</h1>
+        <p class="hero-title" data-i18n="hero.title"></p>
+        <p class="hero-sub" data-i18n="hero.sub"></p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1"></a>
+          <a href="#experience" class="btn btn-ghost" data-i18n="hero.cta2"></a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge" data-i18n="hero.badge1"></span>
+          <span class="badge" data-i18n="hero.badge2"></span>
+          <span class="badge" data-i18n="hero.badge3"></span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo-frame">
+          <img src="assets/portrait.png" alt="Rosario Lemus Barrera, Registered Dietitian Nutritionist" class="hero-photo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Stats ===== -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat"><span class="stat-num">8+</span><span class="stat-label" data-i18n="stats.years"></span></div>
+      <div class="stat"><span class="stat-num">10</span><span class="stat-label" data-i18n="stats.roles"></span></div>
+      <div class="stat"><span class="stat-num">3</span><span class="stat-label" data-i18n="stats.degrees"></span></div>
+      <div class="stat"><span class="stat-num">2</span><span class="stat-label" data-i18n="stats.languages"></span></div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="about.eyebrow"></p>
+      <h2 data-i18n="about.heading"></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p data-i18n="about.p1"></p>
+          <p data-i18n="about.p2"></p>
+          <p class="about-quote" data-i18n="about.quote"></p>
+          <img class="about-photo" src="assets/photo-headset.jpeg" alt="Rosario Lemus during a virtual nutrition consultation" />
+        </div>
+        <div class="about-cards">
+          <img class="about-illustration" src="assets/illus-holistic.png" alt="Holistic nutrition: exercise, mental health, digestive health and metabolic health" />
+          <div class="about-card">
+            <span class="about-card-icon">🍎</span>
+            <h3 data-i18n="about.card1.title"></h3>
+            <p data-i18n="about.card1.text"></p>
+          </div>
+          <div class="about-card">
+            <span class="about-card-icon">👶</span>
+            <h3 data-i18n="about.card2.title"></h3>
+            <p data-i18n="about.card2.text"></p>
+          </div>
+          <div class="about-card">
+            <span class="about-card-icon">🎓</span>
+            <h3 data-i18n="about.card3.title"></h3>
+            <p data-i18n="about.card3.text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Food banner ===== -->
+  <div class="food-band" role="img" aria-label="Healthy foods: salmon, vegetables, fruits, nuts and seeds"></div>
+
+  <!-- ===== Experience ===== -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="exp.eyebrow"></p>
+      <h2 data-i18n="exp.heading"></h2>
+      <div class="timeline" id="timeline"><!-- rendered by JS --></div>
+    </div>
+  </section>
+
+  <!-- ===== Education ===== -->
+  <section id="education" class="section">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="edu.eyebrow"></p>
+      <h2 data-i18n="edu.heading"></h2>
+      <div class="edu-grid" id="edu-grid"><!-- rendered by JS --></div>
+      <figure class="diploma-figure reveal">
+        <img src="assets/diploma.png" alt="Diploma: Nutricionista - Dietista, Universidad Nacional de Colombia" />
+        <figcaption data-i18n="edu.diploma"></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== Skills & Certifications ===== -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <p class="section-eyebrow" data-i18n="skills.eyebrow"></p>
+          <h2 data-i18n="skills.heading"></h2>
+          <ul class="chip-list" id="skills-list"></ul>
+        </div>
+        <div>
+          <p class="section-eyebrow" data-i18n="certs.eyebrow"></p>
+          <h2 data-i18n="certs.heading"></h2>
+          <ul class="cert-list" id="certs-list"></ul>
+          <img class="wes-badge" src="assets/wes-badge.png" alt="WES International Academic Qualifications badge" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="section contact">
+    <div class="container contact-inner">
+      <img class="contact-illustration" src="assets/illus-session.png" alt="Illustration of a virtual holistic nutrition session" />
+      <p class="section-eyebrow" data-i18n="contact.eyebrow"></p>
+      <h2 data-i18n="contact.heading"></h2>
+      <p class="contact-sub" data-i18n="contact.sub"></p>
+      <div class="contact-links">
+        <a class="contact-card" href="mailto:rosariolemusnutricionista@gmail.com">
+          <span class="contact-icon">✉️</span>
+          <span class="contact-label" data-i18n="contact.email"></span>
+          <span class="contact-value">rosariolemusnutricionista@gmail.com</span>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/rosario-lemus-8621b5119" target="_blank" rel="noopener">
+          <span class="contact-icon">💼</span>
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">rosario-lemus</span>
+        </a>
+        <a class="contact-card" href="https://rosariolemusnutri.my.canva.site/" target="_blank" rel="noopener">
+          <span class="contact-icon">🌐</span>
+          <span class="contact-label" data-i18n="contact.site"></span>
+          <span class="contact-value">rosariolemusnutri.my.canva.site</span>
+        </a>
+      </div>
+      <p class="contact-location" data-i18n="contact.location"></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Rosario Lemus Barrera</span>
+      <span data-i18n="footer.tag"></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
