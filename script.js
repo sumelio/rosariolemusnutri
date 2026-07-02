@@ -50,11 +50,21 @@ const translations = {
     "certs.heading": "Certifications",
 
     "contact.eyebrow": "Let's talk",
-    "contact.heading": "Start your nutrition journey",
-    "contact.sub": "Available for virtual nutrition counseling, teaching and consulting projects — in English or Spanish.",
+    "contact.heading": "Contact",
+    "contact.sub": "Leave me your questions! Available for virtual nutrition counseling, teaching and consulting — in English or Spanish.",
     "contact.email": "Email",
     "contact.site": "Personal site",
     "contact.location": "📍 Canada · Available worldwide (virtual)",
+
+    "form.name": "First name",
+    "form.lastname": "Last name",
+    "form.email": "Email",
+    "form.phone": "Phone",
+    "form.message": "Question or suggestion",
+    "form.send": "Send",
+    "form.note": "Submitting opens your email app with the message ready to send.",
+    "form.success": "Thank you! Your email app should open now.",
+    "form.error": "Please complete the required fields (name, email and message).",
 
     "footer.tag": "Nutritionist · Dietitian · Educator",
   },
@@ -105,11 +115,21 @@ const translations = {
     "certs.heading": "Certificaciones",
 
     "contact.eyebrow": "Hablemos",
-    "contact.heading": "Comienza tu camino nutricional",
-    "contact.sub": "Disponible para consulta nutricional virtual, docencia y proyectos de consultoría — en español o inglés.",
+    "contact.heading": "Contacto",
+    "contact.sub": "¡Déjame tus dudas! Disponible para consulta nutricional virtual, docencia y consultoría — en español o inglés.",
     "contact.email": "Correo",
     "contact.site": "Sitio personal",
     "contact.location": "📍 Canadá · Disponible en todo el mundo (virtual)",
+
+    "form.name": "Nombre",
+    "form.lastname": "Apellido",
+    "form.email": "Email",
+    "form.phone": "Celular",
+    "form.message": "Pregunta o sugerencia",
+    "form.send": "Enviar",
+    "form.note": "Al enviar se abrirá tu aplicación de correo con el mensaje listo.",
+    "form.success": "¡Gracias! Tu aplicación de correo debería abrirse ahora.",
+    "form.error": "Por favor completa los campos obligatorios (nombre, email y mensaje).",
 
     "footer.tag": "Nutricionista · Dietista · Educadora",
   },
@@ -484,6 +504,54 @@ function observeReveals() {
   );
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 }
+
+/* ============ Contact form (mailto) ============ */
+const CONTACT_EMAIL = "rosariolemusnutricionista@gmail.com";
+
+document.getElementById("contact-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("f-name");
+  const lastname = document.getElementById("f-lastname");
+  const email = document.getElementById("f-email");
+  const phone = document.getElementById("f-phone");
+  const message = document.getElementById("f-message");
+  const feedback = document.getElementById("form-feedback");
+
+  // Simple validation: name, valid email and message are required
+  let valid = true;
+  [name, email, message].forEach((field) => field.classList.remove("invalid"));
+
+  if (!name.value.trim()) { name.classList.add("invalid"); valid = false; }
+  if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { email.classList.add("invalid"); valid = false; }
+  if (!message.value.trim()) { message.classList.add("invalid"); valid = false; }
+
+  if (!valid) {
+    feedback.textContent = translations[currentLang]["form.error"];
+    feedback.classList.add("error");
+    return;
+  }
+
+  const fullName = `${name.value.trim()} ${lastname.value.trim()}`.trim();
+  const subject =
+    currentLang === "es"
+      ? `Contacto web — ${fullName}`
+      : `Website contact — ${fullName}`;
+
+  const bodyLines = [
+    `${translations[currentLang]["form.name"]}: ${fullName}`,
+    `${translations[currentLang]["form.email"]}: ${email.value.trim()}`,
+    phone.value.trim() ? `${translations[currentLang]["form.phone"]}: ${phone.value.trim()}` : null,
+    "",
+    message.value.trim(),
+  ].filter((l) => l !== null);
+
+  const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+
+  feedback.classList.remove("error");
+  feedback.textContent = translations[currentLang]["form.success"];
+  window.location.href = mailto;
+});
 
 /* Close mobile nav on link click */
 document.querySelectorAll(".nav-links a").forEach((a) =>
