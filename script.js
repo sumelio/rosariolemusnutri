@@ -5,10 +5,9 @@
 
 const translations = {
   en: {
-    "nav.about": "About",
-    "nav.experience": "Experience",
-    "nav.education": "Education",
-    "nav.skills": "Skills",
+    "nav.home": "Home",
+    "nav.about": "Meet Rosario Nutri",
+    "nav.services": "Services",
     "nav.contact": "Contact",
 
     "hero.eyebrow": "Registered Dietitian Nutritionist",
@@ -36,6 +35,21 @@ const translations = {
     "about.card2.text": "Specialist in pediatric clinical nutrition, from infancy through adolescence.",
     "about.card3.title": "Teaching & Research",
     "about.card3.text": "University lecturer and researcher in food security and nutrition education.",
+
+    "story.heading": "Get to know my story",
+    "story.intro": "Hi! I'm Rosario Lemus, a Registered Dietitian Nutritionist from Colombia. My mission is to help you regain your health through healthy eating — leaving restrictions behind.",
+    "story.motto": "“Everything done with love is achieved.”",
+    "story.passion": "I'm passionate about neuroscience and exercise. I'm not a trainer, but I can be the spark that helps you start moving — and I know first-hand, having lived with migraines, how much food and movement can transform the way you feel.",
+    "story.canada.heading": "The art of patience: from Colombia to Canada",
+    "story.canada.p1": "Since March 2025 I've been living as a migrant in Canada. This experience has taught me that transforming your health is like learning a language from scratch: it takes patience, consistency and celebrating every small win.",
+    "story.canada.p2": "Forget the false promises of “changes in one month”. Real, lasting change is built step by step, with habits that fit your life, your tastes and your culture.",
+    "story.closing": "I'm here to listen and walk beside you on this journey. Make yourself a priority today.",
+
+    "services.eyebrow": "How I can help you",
+    "services.heading": "Services",
+    "services.sub": "Discover your best self. Make yourself a priority.",
+    "services.note": "All services are delivered online, in English or Spanish. Book through the contact form below.",
+    "services.cta": "Book now",
 
     "exp.eyebrow": "Career path",
     "exp.heading": "Professional Experience",
@@ -70,10 +84,9 @@ const translations = {
   },
 
   es: {
-    "nav.about": "Sobre mí",
-    "nav.experience": "Experiencia",
-    "nav.education": "Educación",
-    "nav.skills": "Habilidades",
+    "nav.home": "Home",
+    "nav.about": "Conoce a Rosario Nutri",
+    "nav.services": "Servicios",
     "nav.contact": "Contacto",
 
     "hero.eyebrow": "Nutricionista Dietista",
@@ -101,6 +114,21 @@ const translations = {
     "about.card2.text": "Especialista en nutrición clínica pediátrica, desde la infancia hasta la adolescencia.",
     "about.card3.title": "Docencia e Investigación",
     "about.card3.text": "Docente universitaria e investigadora en seguridad alimentaria y educación nutricional.",
+
+    "story.heading": "Conoce mi historia",
+    "story.intro": "¡Hola! Soy Rosario Lemus, Nutricionista y Dietista registrada en Colombia. Mi misión es ayudarte a recuperar tu salud a través de la alimentación saludable, dejando atrás las restricciones.",
+    "story.motto": "“Todo lo que se hace con amor se logra.”",
+    "story.passion": "Me apasionan la neurociencia y el ejercicio. No soy entrenadora, pero sí puedo ser la chispa que te ayude a empezar a moverte — y sé de primera mano, por haber vivido con migrañas, cuánto pueden transformar la alimentación y el movimiento la forma en que te sientes.",
+    "story.canada.heading": "El arte de la paciencia: de Colombia a Canadá",
+    "story.canada.p1": "Desde marzo de 2025 vivo como migrante en Canadá. Esta experiencia me ha enseñado que transformar tu salud es como aprender un idioma desde cero: requiere paciencia, constancia y celebrar cada pequeño logro.",
+    "story.canada.p2": "Olvídate de las promesas falsas de “cambios en un mes”. El cambio real y duradero se construye paso a paso, con hábitos que se adapten a tu vida, tus gustos y tu cultura.",
+    "story.closing": "Estoy aquí para escucharte y caminar a tu lado en este viaje. Ponte como prioridad hoy.",
+
+    "services.eyebrow": "Cómo puedo ayudarte",
+    "services.heading": "Servicios",
+    "services.sub": "Descubre tu mejor versión. Ponte como prioridad.",
+    "services.note": "Todos los servicios son online, en español o inglés. Agenda a través del formulario de contacto.",
+    "services.cta": "Agenda ahora",
 
     "exp.eyebrow": "Trayectoria",
     "exp.heading": "Experiencia Profesional",
@@ -395,6 +423,83 @@ const education = [
   },
 ];
 
+/* ============ Services data (from Wix "Servicios" page) ============ */
+const services = [
+  {
+    icon: "🥗",
+    featured: false,
+    title: {
+      en: "Personalized Nutrition Consultation — First Time",
+      es: "Consulta Nutricional Personalizada — Primera vez",
+    },
+    meta: { en: "60 min · Online", es: "60 min · Online" },
+    bullets: {
+      en: [
+        "Complete nutritional assessment",
+        "7-day meal plan grounded in your habits, tastes and food culture",
+        "Habit-change plan",
+        "WhatsApp follow-up",
+      ],
+      es: [
+        "Valoración completa",
+        "Plan de 7 días aterrizado a tus hábitos, gustos y cultura alimentaria",
+        "Plan de cambio de hábitos",
+        "Seguimiento por WhatsApp",
+      ],
+    },
+  },
+  {
+    icon: "📅",
+    featured: true,
+    title: {
+      en: "Three-Month Nutrition Program",
+      es: "Programa Nutricional de Tres Meses",
+    },
+    meta: { en: "1 follow-up per month · 60 min each · Online", es: "1 consulta de seguimiento por mes · 60 min c/u · Online" },
+    bullets: {
+      en: [
+        "Complete nutritional assessment",
+        "Visually appealing 7-day meal plan",
+        "Habit-change plan",
+        "WhatsApp follow-up",
+        "Progress-tracking app",
+      ],
+      es: [
+        "Valoración completa",
+        "Plan de 7 días visualmente estético",
+        "Plan de cambio de hábitos",
+        "Seguimiento por WhatsApp",
+        "App de seguimiento",
+      ],
+    },
+  },
+  {
+    icon: "🧠",
+    featured: false,
+    title: {
+      en: "Connection: Integral Health",
+      es: "Connection: Salud Integral",
+    },
+    meta: { en: "Online", es: "Online" },
+    bullets: {
+      en: [
+        "Mental training strategies",
+        "Starting and maintaining the exercise habit",
+        "Healthy dessert recipe book",
+        "Online education",
+        "Support club",
+      ],
+      es: [
+        "Estrategias de entrenamiento mental",
+        "Iniciación y mantenimiento del hábito del ejercicio",
+        "Recetario de postres saludables",
+        "Educación online",
+        "Club de acompañamiento",
+      ],
+    },
+  },
+];
+
 /* ============ Skills & Certifications ============ */
 const skills = {
   en: [
@@ -467,6 +572,22 @@ function renderEducation(lang) {
     .join("");
 }
 
+function renderServices(lang) {
+  const el = document.getElementById("services-grid");
+  el.innerHTML = services
+    .map(
+      (svc) => `
+      <div class="service-card reveal${svc.featured ? " featured" : ""}">
+        <span class="service-icon">${svc.icon}</span>
+        <h3>${svc.title[lang]}</h3>
+        <p class="service-meta">${svc.meta[lang]}</p>
+        <ul>${svc.bullets[lang].map((b) => `<li>${b}</li>`).join("")}</ul>
+        <a href="#contact" class="btn btn-primary service-cta">${translations[lang]["services.cta"]}</a>
+      </div>`
+    )
+    .join("");
+}
+
 function renderLists(lang) {
   document.getElementById("skills-list").innerHTML = skills[lang].map((s) => `<li>${s}</li>`).join("");
   document.getElementById("certs-list").innerHTML = certs[lang].map((c) => `<li>${c}</li>`).join("");
@@ -483,6 +604,7 @@ function setLang(lang) {
   renderStatic(lang);
   renderTimeline(lang);
   renderEducation(lang);
+  renderServices(lang);
   renderLists(lang);
   observeReveals();
 }

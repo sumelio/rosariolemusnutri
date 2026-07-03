@@ -44,20 +44,25 @@ python3 -m http.server 8765
 
 ## 3. Arquitectura de la página
 
+El menú de navegación replica el del sitio Wix con 4 entradas: **Home** (`#top`), **Conoce a Rosario Nutri** (`#conoce`), **Servicios** (`#servicios`) y **Contacto** (`#contact`).
+
 `index.html` es una única página con estas secciones (en orden):
 
-| Sección | ID / clase | Contenido |
-|---|---|---|
-| Navbar | `.navbar` | Logo, links de navegación, switch de idioma EN/ES, menú móvil |
-| Hero | `#top .hero` | Nombre, título profesional, CTAs, badges, foto principal |
-| Stats | `.stats` | 4 cifras destacadas (años, roles, títulos, idiomas) |
-| Sobre mí | `#about` | Bio (2 párrafos + lema), foto, ilustración, 3 tarjetas |
-| Banda de comida | `.food-band` | Imagen decorativa a ancho completo |
-| Experiencia | `#experience` | Timeline generado por JS desde `experience[]` |
-| Educación | `#education` | Grid de tarjetas generado por JS desde `education[]` + diploma |
-| Habilidades / Certificaciones | `#skills` | Chips y lista generados por JS + insignia WES |
-| Contacto | `#contact` | Foto, links directos, redes sociales y formulario |
-| Footer | `.footer` | Copyright (año automático) |
+| Sección | ID / clase | En el menú | Contenido |
+|---|---|---|---|
+| Navbar | `.navbar` | — | Logo, links de navegación, switch de idioma EN/ES, menú móvil |
+| Hero | `#top .hero` | Home | Nombre, título profesional, CTAs, badges, foto principal |
+| Stats | `.stats` | — | 4 cifras destacadas (años, roles, títulos, idiomas) |
+| Conoce a Rosario Nutri | `#conoce` | Conoce a Rosario Nutri | Bio (2 párrafos + lema), foto, ilustración, 3 tarjetas + bloque `.story` (historia personal, claves `story.*`) |
+| Banda de comida | `.food-band` | — | Imagen decorativa a ancho completo |
+| Experiencia | `#experience` | — | Timeline generado por JS desde `experience[]` |
+| Educación | `#education` | — | Grid de tarjetas generado por JS desde `education[]` + diploma |
+| Habilidades / Certificaciones | `#skills` | — | Chips y lista generados por JS + insignia WES |
+| Servicios | `#servicios` | Servicios | 3 tarjetas generadas por JS desde `services[]` |
+| Contacto | `#contact` | Contacto | Foto, links directos, redes sociales y formulario |
+| Footer | `.footer` | — | Copyright (año automático) |
+
+El bloque `.story` reproduce el contenido de la página Wix "Conoce a Rosario Nutri" (historia personal, lema y trayectoria de Colombia a Canadá) y la sección Servicios reproduce la página Wix "Servicios".
 
 **Regla general:** los textos fijos viven en `translations` (script.js) y se inyectan vía atributos `data-i18n`; los contenidos repetitivos (experiencia, educación, skills, certificaciones) viven en arrays de datos y se renderizan con JS. **El HTML casi no contiene texto.**
 
@@ -130,6 +135,25 @@ Cada entrada genera un ítem del timeline. Formato:
   tag:   { en: "Degree", es: "Título" },  // etiqueta pequeña (Curso, Taller, etc.)
 },
 ```
+
+### Servicios — array `services`
+
+Cada entrada genera una tarjeta en la sección `#servicios` (contenido tomado de la página "Servicios" del sitio Wix):
+
+```js
+{
+  icon: "🥗",                          // emoji de la tarjeta
+  featured: false,                     // true = tarjeta destacada (fondo verde claro)
+  title: { en: "...", es: "..." },
+  meta:  { en: "60 min · Online", es: "60 min · Online" },  // duración/modalidad
+  bullets: {
+    en: ["What's included 1", ...],
+    es: ["Qué incluye 1", ...],
+  },
+},
+```
+
+El botón de cada tarjeta ("Agenda ahora" / "Book now", clave `services.cta`) enlaza a `#contact`. Los textos fijos de la sección usan las claves `services.*` en `translations`.
 
 ### Habilidades y certificaciones — `skills` y `certs`
 
@@ -245,6 +269,8 @@ Requisitos: ninguno (no hay build). Solo asegurarse de subir `index.html`, `styl
 | Corregir un texto | `translations` en script.js (en **ambos** idiomas) |
 | Añadir/editar un trabajo | Array `experience` en script.js |
 | Añadir un curso/título | Array `education` en script.js |
+| Añadir/editar un servicio | Array `services` en script.js |
+| Editar la historia personal | Claves `story.*` en `translations` (script.js) |
 | Añadir una habilidad | `skills.en` y `skills.es` en script.js |
 | Cambiar la foto principal | Reemplazar `assets/portrait.png` |
 | Cambiar colores | Variables `:root` en styles.css |
