@@ -335,7 +335,7 @@ a { color: var(--green-700); text-decoration: none; }
 /* ============ Food banner ============ */
 .food-band {
   height: clamp(180px, 28vw, 320px);
-  background: url("assets/food-banner.png") center / cover no-repeat;
+  background: url("assets/food-banner.jpg") center / cover no-repeat;
   border-top: 4px solid var(--green-700);
   border-bottom: 4px solid var(--green-700);
 }

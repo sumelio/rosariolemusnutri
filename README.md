@@ -15,18 +15,18 @@ improve_cv/
 ├── script.js         # Traducciones, datos del CV, render dinámico, formulario
 ├── Profile.pdf       # Perfil de LinkedIn (fuente del contenido)
 ├── README.md         # Este documento
-└── assets/           # Imágenes (descargadas del sitio Wix original)
+└── assets/           # Imágenes (del sitio Wix original, optimizadas para web)
     ├── logo.png             # Logo "Rosario Lemus Nutrición Holística" (navbar + favicon)
-    ├── portrait.png         # Foto profesional con bata blanca (hero)
-    ├── photo-headset.jpeg   # Foto en consulta virtual (sección "Sobre mí")
+    ├── portrait.jpg         # Foto profesional con bata blanca (hero)
+    ├── photo-headset.jpeg   # Foto en consulta virtual (sección "Conoce a Rosario")
     ├── photo-selfie.jpeg    # Foto con headset (sección "Contacto")
-    ├── food-banner.png      # Banda de alimentos saludables (entre secciones)
-    ├── illus-holistic.png   # Ilustración nutrición holística (sección "Sobre mí")
-    ├── illus-session.png    # Ilustración de sesión virtual (sin usar actualmente)
-    ├── illus-avatar.png     # Retrato ilustrado (sin usar actualmente)
-    ├── diploma.png          # Diploma UNAL (sección "Educación")
+    ├── food-banner.jpg      # Banda de alimentos saludables (entre secciones)
+    ├── illus-holistic.jpg   # Ilustración nutrición holística (sección "Conoce a Rosario")
+    ├── diploma.jpg          # Diploma UNAL (sección "Educación")
     └── wes-badge.png        # Insignia WES (sección "Certificaciones")
 ```
+
+> **Nota de rendimiento:** las imágenes están comprimidas (~0.8 MB en total; los originales de Wix pesaban ~7 MB). Si reemplazas una imagen, comprímela antes (p. ej. `sips -Z 800 -s format jpeg -s formatOptions 82 original.png --out nueva.jpg`). Las imágenes bajo el primer pantallazo usan `loading="lazy"`.
 
 ## 2. Cómo ejecutar en local
 
@@ -211,7 +211,7 @@ Los elementos con clase `.reveal` aparecen con fade-in al hacer scroll (Intersec
 - Para **reemplazar una imagen**, sobrescribir el archivo manteniendo el nombre, o cambiar el `src` en index.html.
 - La banda de comida es un `background-image` en CSS (`.food-band`), no un `<img>`.
 - El logo también es el **favicon** (`<link rel="icon">` en index.html).
-- Imágenes disponibles pero sin usar: `illus-session.png`, `illus-avatar.png`.
+- Todas las imágenes están optimizadas para web (comprimidas y redimensionadas); mantener ese criterio al reemplazarlas.
 
 ## 8. Formulario de contacto
 
@@ -272,7 +272,7 @@ Requisitos: ninguno (no hay build). Solo asegurarse de subir `index.html`, `styl
 | Añadir/editar un servicio | Array `services` en script.js |
 | Editar la historia personal | Claves `story.*` en `translations` (script.js) |
 | Añadir una habilidad | `skills.en` y `skills.es` en script.js |
-| Cambiar la foto principal | Reemplazar `assets/portrait.png` |
+| Cambiar la foto principal | Reemplazar `assets/portrait.jpg` |
 | Cambiar colores | Variables `:root` en styles.css |
 | Cambiar email del formulario | `CONTACT_EMAIL` en script.js + tarjeta en index.html |
 | Añadir sección nueva | HTML en index.html + claves `data-i18n` + traducciones + (opcional) estilos |
